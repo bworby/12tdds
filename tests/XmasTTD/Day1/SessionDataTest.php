@@ -5,7 +5,7 @@ namespace XmasTTD\Day1;
 use XmasTTD\Day1\SessionData as SUT;
 use PHPUnit\Framework\TestCase;
 
-class SessionTest extends TestCase
+class SessionDataTest extends TestCase
 {
     public function intProvider(): \Generator
     {
