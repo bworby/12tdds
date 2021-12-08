@@ -70,22 +70,6 @@ class StringGridChecker
         return $touching_count;
     }
 
-    public function getCountOfKnotsTouchedBy_bu(IndexSet $index_set): int
-    {
-        $touching_count = $this->checkIndexPathTouchCount(IndexSet::make($index_set->getRow(), $index_set->getColumn()), true);
-        $touching_count += $this->checkIndexPathTouchCount(IndexSet::make($index_set->getRow()-1, $index_set->getColumn()), false);
-        $touching_count += $this->checkIndexPathTouchCount(IndexSet::make($index_set->getRow()+1, $index_set->getColumn()), false);
-        return $touching_count;
-    }
-
-    public function checkIndexPathTouchCount(IndexSet $index_set, bool $ignore_self = true): int
-    {
-        $touching_count = (!$ignore_self && $this->elementIsKnot($index_set)) ? 1 : 0;
-        $touching_count += $this->previousElementIsKnot($index_set) ? 1 : 0;
-        $touching_count += $this->nextElementIsKnot($index_set) ? 1 : 0;
-        return $touching_count;
-    }
-
     public function elementIsKnot(IndexSet $index_set): bool
     {
         $element = $this->data[$index_set->getRow()][$index_set->getColumn()] ?? null;

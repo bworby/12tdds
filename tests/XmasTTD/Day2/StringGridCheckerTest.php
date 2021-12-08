@@ -57,23 +57,6 @@ class StringGridCheckerTest extends TestCase
     /**
      * @test
      */
-    public function checkIndexPathTouchCount_retuns_expected()
-    {
-        $input = [
-            "*..."
-        ];
-
-        $checker = new StringGridChecker(...$input);
-
-        self::assertEquals(0, $checker->checkIndexPathTouchCount(IndexSet::make(0,0), true));
-        self::assertEquals(1, $checker->checkIndexPathTouchCount(IndexSet::make(0,0), false));
-        self::assertEquals(1, $checker->checkIndexPathTouchCount(IndexSet::make(0,1), true));
-        self::assertEquals(1, $checker->checkIndexPathTouchCount(IndexSet::make(0,1), false));
-    }
-
-    /**
-     * @test
-     */
     public function getCountOfKnotsTouchedBy_retuns_expected()
     {
         $input = [
