@@ -2,6 +2,8 @@
 
 namespace XmasTTD\Day2;
 
+use function PHPUnit\Framework\throwException;
+
 class IndexSet
 {
     private int $row;
@@ -16,6 +18,16 @@ class IndexSet
     public static function make(int $row, int $column): self
     {
         return new self($row, $column);
+    }
+
+    public static function makeFromString(string $index_set_string): self
+    {
+        $row_column = explode(":", $index_set_string);
+        if(count($row_column) < 2) {
+            throwException(new \Exception("UH OH! bad input index set string: $index_set_string"));
+        }
+
+        return new self((int)$row_column[0], (int)$row_column[1]);
     }
 
     public function getRow(): int {
