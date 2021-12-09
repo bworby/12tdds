@@ -9,13 +9,13 @@ class GridRange
 {
     private IndexSet $start_index_set;
     private IndexSet $end_index_set;
-    private string $string_command;
+    private string $range_string;
 
-    public function __construct(IndexSet $start_index_set, IndexSet $end_index_set, string $string_command = "")
+    public function __construct(IndexSet $start_index_set, IndexSet $end_index_set, string $range_string = "")
     {
         $this->start_index_set = $start_index_set;
         $this->end_index_set = $end_index_set;
-        $this->string_command = $string_command;
+        $this->range_string = $range_string;
     }
 
     public static function make(IndexSet $start_index_set, IndexSet $end_index_set): self
@@ -39,9 +39,9 @@ class GridRange
         );
     }
 
-    public function getStringCommand(): string
+    public function getRangeString(): string
     {
-        return $this->string_command;
+        return $this->range_string;
     }
 
     public function startIndexSet(): IndexSet
