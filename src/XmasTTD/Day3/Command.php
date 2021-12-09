@@ -6,6 +6,7 @@ use function PHPUnit\Framework\throwException;
 
 class Command
 {
+    //should make enum for action
     private string $action;
 
     private GridRange $range;

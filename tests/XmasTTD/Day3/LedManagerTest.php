@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class LedManagerTest extends TestCase
 {
-
     public function getSUT(int $grid_size = 20) : SUT
     {
         return new SUT($grid_size);
